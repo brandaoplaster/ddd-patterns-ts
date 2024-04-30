@@ -6,11 +6,11 @@ import ProductModel from "../../../infrastructure/db/sequilize/model/product.mod
 import OrderRepository from "../../../infrastructure/repository/order.repository";
 import CustomerRepository from "../../../infrastructure/repository/customer.repository";
 import ProductRepository from "../../../infrastructure/repository/product.repository";
-import Order from "../../../domain/entity/order";
+import Order from "../../../domain/checkout/entity/order";
 import Customer from "../../../domain/entity/customer";
 import Address from "../../../domain/entity/address";
 import Product from "../../../domain/entity/product";
-import OrderItem from "../../../domain/entity/order_item";
+import OrderItem from "../../../domain/checkout/entity/order_item";
 
 describe("Order repository test", () => {
   let sequelize: Sequelize;
