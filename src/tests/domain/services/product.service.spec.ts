@@ -1,4 +1,4 @@
-import Product from "../../../domain/entity/product";
+import Product from "../../../domain/product/entity/product";
 import ProductService from "../../../domain/services/product.service";
 
 describe("Product service unit tests", () => {
@@ -6,7 +6,7 @@ describe("Product service unit tests", () => {
     const product1 = new Product("123", "p1", 10);
     const product2 = new Product("124", "p2", 20);
 
-    const products = [product1, product2]
+    const products = [product1, product2];
 
     ProductService.incrementPrice(products, 100);
 

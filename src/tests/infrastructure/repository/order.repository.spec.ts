@@ -9,7 +9,7 @@ import ProductRepository from "../../../infrastructure/repository/product.reposi
 import Order from "../../../domain/checkout/entity/order";
 import Customer from "../../../domain/entity/customer";
 import Address from "../../../domain/entity/address";
-import Product from "../../../domain/entity/product";
+import Product from "../../../domain/product/entity/product";
 import OrderItem from "../../../domain/checkout/entity/order_item";
 
 describe("Order repository test", () => {

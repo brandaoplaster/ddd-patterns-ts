@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize-typescript";
 import ProductModel from "../../../infrastructure/db/sequilize/model/product.model";
-import Product from "../../../domain/entity/product";
+import Product from "../../../domain/product/entity/product";
 import ProductRepository from "../../../infrastructure/repository/product.repository";
 
 describe("Product repository test", () => {
@@ -32,7 +32,7 @@ describe("Product repository test", () => {
     expect(productModel.toJSON()).toStrictEqual({
       id: "123",
       name: "product 1",
-      price: 100
+      price: 100,
     });
   });
 
@@ -47,7 +47,7 @@ describe("Product repository test", () => {
     expect(productModel.toJSON()).toStrictEqual({
       id: "123",
       name: "product 1",
-      price: 100
+      price: 100,
     });
 
     product.changeName("Product 2");
@@ -60,7 +60,7 @@ describe("Product repository test", () => {
     expect(productModel2.toJSON()).toStrictEqual({
       id: "123",
       name: "Product 2",
-      price: 200
+      price: 200,
     });
   });
 
@@ -77,7 +77,7 @@ describe("Product repository test", () => {
     expect(productModel.toJSON()).toStrictEqual({
       id: foundProduct.id,
       name: foundProduct.name,
-      price: foundProduct.price
+      price: foundProduct.price,
     });
   });
 
