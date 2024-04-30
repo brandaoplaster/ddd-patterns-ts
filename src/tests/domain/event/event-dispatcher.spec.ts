@@ -1,6 +1,6 @@
-import EventDispatcher from "../../../domain/event/@shared/event-dispatcher";
-import SendEmailWhenProductIsCreatedHandler from "../../../domain/event/@shared/product/handler/send-email.handler";
-import ProductCreatedEvent from "../../../domain/event/@shared/product/product-created.event";
+import EventDispatcher from "../../../domain/@shared/event-dispatcher";
+import SendEmailWhenProductIsCreatedHandler from "../../../domain/@shared/product/handler/send-email.handler";
+import ProductCreatedEvent from "../../../domain/@shared/product/product-created.event";
 
 describe("Domain events tests", () => {
   it("should register an event handler", () => {
