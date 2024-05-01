@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize";
-import Order from "../../domain/checkout/entity/order";
-import OrderItem from "../../domain/checkout/entity/order_item";
-import OrderItemModel from "../db/sequilize/model/order-item.model";
-import OrderModel from "../db/sequilize/model/order.model";
+import Order from "../../../domain/checkout/entity/order";
+import OrderItem from "../../../domain/checkout/entity/order_item";
+import OrderItemModel from "./order-item.model";
+import OrderModel from "./order.model";
 
 export default class OrderRepository {
   async create(entity: Order): Promise<void> {

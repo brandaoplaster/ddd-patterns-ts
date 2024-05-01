@@ -1,5 +1,12 @@
-import { BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
-import ProductModel from "./product.model";
+import {
+  BelongsTo,
+  Column,
+  ForeignKey,
+  Model,
+  PrimaryKey,
+  Table,
+} from "sequelize-typescript";
+import ProductModel from "../../product/repository/product.model";
 import OrderModel from "./order.model";
 
 @Table({
@@ -7,7 +14,6 @@ import OrderModel from "./order.model";
   timestamps: false,
 })
 export default class OrderItemModel extends Model {
-
   @PrimaryKey
   @Column
   declare id: string;

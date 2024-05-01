@@ -1,5 +1,5 @@
-import Address from "../../../domain/customer/value-object/address";
-import Customer from "../../../domain/customer/entity/customer";
+import Address from "../../../../domain/customer/value-object/address";
+import Customer from "../../../../domain/customer/entity/customer";
 
 describe("Customer unit test", () => {
   it("should throw error when id is empty", () => {
