@@ -1,7 +1,7 @@
-import Customer from "../../../domain/entity/customer";
-import Order from "../../../domain/entity/order";
-import OrderItem from "../../../domain/entity/order_item";
-import OrderService from "../../../domain/services/order.service";
+import Customer from "../../../domain/customer/entity/customer";
+import Order from "../../../domain/checkout/entity/order";
+import OrderItem from "../../../domain/checkout/entity/order_item";
+import OrderService from "../../../domain/checkout/service/order.service";
 
 describe("Order service unit tests", () => {
   it("should get total of all orders", () => {
@@ -31,10 +31,10 @@ describe("Order service unit tests", () => {
     const customer = new Customer("1", "c1");
     expect(customer.rewardPoints).toBe(0);
 
-    customer.addRewardPoints(10)
+    customer.addRewardPoints(10);
     expect(customer.rewardPoints).toBe(10);
 
-    customer.addRewardPoints(10)
+    customer.addRewardPoints(10);
     expect(customer.rewardPoints).toBe(20);
   });
 });

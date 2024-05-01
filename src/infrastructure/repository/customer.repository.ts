@@ -1,7 +1,6 @@
-
-import Address from "../../domain/entity/address";
-import Customer from "../../domain/entity/customer";
-import CustomerRepositoryInterface from "../../domain/repository/customer-repository.interface";
+import Address from "../../domain/customer/value-object/address";
+import Customer from "../../domain/customer/entity/customer";
+import CustomerRepositoryInterface from "../../domain/customer/repository/customer-repository.interface";
 import CustomerModel from "../db/sequilize/model/customer.model";
 
 export default class CustomerRepository implements CustomerRepositoryInterface {
@@ -19,18 +18,20 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
   }
 
   async update(entity: Customer): Promise<void> {
-    await CustomerModel.update({
-      name: entity.name,
-      street: entity.Address.street,
-      number: entity.Address.number,
-      zipcode: entity.Address.zipcode,
-      city: entity.Address.city,
-      active: entity.isActive(),
-      rewardPoints: entity.rewardPoints
-    },
+    await CustomerModel.update(
       {
-        where: { id: entity.id }
-      });
+        name: entity.name,
+        street: entity.Address.street,
+        number: entity.Address.number,
+        zipcode: entity.Address.zipcode,
+        city: entity.Address.city,
+        active: entity.isActive(),
+        rewardPoints: entity.rewardPoints,
+      },
+      {
+        where: { id: entity.id },
+      }
+    );
   }
 
   async find(id: string): Promise<Customer> {

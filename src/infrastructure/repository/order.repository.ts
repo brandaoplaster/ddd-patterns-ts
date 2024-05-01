@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
-import Order from "../../domain/entity/order";
-import OrderItem from "../../domain/entity/order_item";
+import Order from "../../domain/checkout/entity/order";
+import OrderItem from "../../domain/checkout/entity/order_item";
 import OrderItemModel from "../db/sequilize/model/order-item.model";
 import OrderModel from "../db/sequilize/model/order.model";
 
