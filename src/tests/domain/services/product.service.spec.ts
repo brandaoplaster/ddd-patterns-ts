@@ -1,5 +1,5 @@
 import Product from "../../../domain/product/entity/product";
-import ProductService from "../../../domain/services/product.service";
+import ProductService from "../../../domain/product/service/product.service";
 
 describe("Product service unit tests", () => {
   it("should change the prices of all products", () => {
