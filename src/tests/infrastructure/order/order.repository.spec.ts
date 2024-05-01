@@ -99,9 +99,9 @@ describe("Order repository test", () => {
       product.name,
       product.price,
       product.id,
-      2
+      1
     );
-    const order = new Order("1", "1", [orderItem]);
+    const order = new Order("1", customer.id, [orderItem]);
 
     const orderRepository = new OrderRepository();
     await orderRepository.create(order);
@@ -111,18 +111,20 @@ describe("Order repository test", () => {
       include: ["items"],
     });
 
+    const OrderFind = await orderRepository.find("1");
+
     expect(orderModel.toJSON()).toStrictEqual({
-      id: orderModel.id,
-      customer_id: customer.id,
-      total: orderModel.total,
+      id: OrderFind.id,
+      customer_id: OrderFind.customerId,
+      total: OrderFind.total(),
       items: [
         {
-          id: orderItem.id,
-          name: orderItem.name,
-          price: orderItem.price,
-          quantity: orderItem.quantity,
-          order_id: order.id,
-          product_id: orderItem.productId,
+          id: OrderFind.items[0].id,
+          name: OrderFind.items[0].name,
+          price: OrderFind.items[0].price,
+          quantity: OrderFind.items[0].quantity,
+          order_id: OrderFind.id,
+          product_id: OrderFind.items[0].productId,
         },
       ],
     });
